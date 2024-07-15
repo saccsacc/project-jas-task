@@ -20,7 +20,7 @@
         <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
           <div class="overflow-hidden bg-white shadow-xl sm:rounded-lg">
 
-            <div class="flex justify-end mt-3">
+            <div class="flex justify-starat ml-4 mt-3">
               <div class="mb-1 xl:w-96">
                 <div class="relative flex items-stretch w-4/5 mb-3 input-group">
                   <input
@@ -130,14 +130,14 @@
                       {{ task.user?.name }}
                     </div>
                   </td>
-                  <td class="px-6 py-4 text-sm font-medium text-right whitespace-nowrap">
+                  <td class="text-sm font-medium text-right whitespace-nowrap">
                     <inertia-link
                       :href="`/tasks/${task.id}/edit`"
-                      class="float-left px-4 py-2 text-green-400 duration-100 rounded hover:text-green-600"
+                      class="float-left px-2 py-2 text-green-400 duration-100 rounded hover:text-green-600"
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        class="w-6 h-6"
+                        class="w-5 h-5"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
@@ -153,11 +153,11 @@
                     <a
                       href="#"
                       @click="deleteTask(task)"
-                      class="float-left px-4 py-2 ml-2 text-red-400 duration-100 rounded hover:text-red-600"
+                      class="float-left px-2 py-2 ml-2 text-red-400 duration-100 rounded hover:text-red-600"
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        class="w-6 h-6"
+                        class="w-5 h-5"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"

@@ -35,9 +35,9 @@
                         aria-label="Status"
                     >
                         <option value="" disabled>Option</option>
-                        <option value="pending">pending</option>
-                        <option value="in-progress">in-progress</option>
-                        <option value="compplete">compplete</option>
+                        <option value="pending">Pending</option>
+                        <option value="in-progress">In-Progress</option>
+                        <option value="completed">Completed</option>
                     </select>
                     </div>
                     <span class="text-red-500">{{ errors.status }}</span>

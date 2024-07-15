@@ -24,7 +24,7 @@ class TaskStoreRequest extends FormRequest
         $validate = [
             'title' => 'required|string|min:2|max:150',
             'description' => 'required|string',
-            'status' => 'required|in:pending,in-progress,complete',
+            'status' => 'required|in:pending,in-progress,completed',
             'user_id' => 'required|integer',
             'due_date' => 'nullable|date',
         ];
