@@ -52,6 +52,12 @@ const logout = () => {
                                     Dashboard
                                 </NavLink>
                             </div>
+
+                            <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                                <NavLink :href="route('tasks.index')" :active="route().current('tasks.index')">
+                                    Tasks
+                                </NavLink>
+                            </div>
                         </div>
 
                         <div class="hidden sm:flex sm:items-center sm:ms-6">
@@ -196,6 +202,12 @@ const logout = () => {
                         </ResponsiveNavLink>
                     </div>
 
+                    <div class="pt-2 pb-3 space-y-1">
+                        <ResponsiveNavLink :href="route('tasks.index')" :active="route().current('tasks.index')">
+                            Tasks
+                        </ResponsiveNavLink>
+                    </div>
+
                     <!-- Responsive Settings Options -->
                     <div class="pt-4 pb-1 border-t border-gray-200">
                         <div class="flex items-center px-4">
@@ -277,6 +289,24 @@ const logout = () => {
             <header v-if="$slots.header" class="bg-white shadow">
                 <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
                     <slot name="header" />
+                </div>
+
+                <div v-if="$page.props.flash.success" class="text-center bg-indigo-900">
+                    <div class="flex items-center p-2 leading-none text-indigo-100 lg:rounded-full lg:inline-flex"
+                        role="alert">
+                        <span
+                            class="flex px-2 py-1 mr-3 text-xs font-bold uppercase bg-indigo-500 rounded-full">Success</span>
+                        <span class="flex-auto mr-2 font-semibold text-left">{{ $page.props.flash.success }}</span>
+                    </div>
+                </div>
+
+                <div v-if="$page.props.flash.error" class="text-center bg-red-900">
+                    <div class="flex items-center p-1 leading-none text-red-100 lg:rounded-full lg:inline-flex"
+                        role="alert">
+                        <span
+                            class="flex px-2 py-1 mr-3 text-xs font-bold uppercase bg-red-500 rounded-full">Error</span>
+                        <span class="flex-auto mr-2 font-semibold text-left">{{ $page.props.flash.error }}</span>
+                    </div>
                 </div>
             </header>
 
