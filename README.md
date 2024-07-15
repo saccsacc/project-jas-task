@@ -24,13 +24,10 @@ To get started with the installation, follow these steps:
 7. Configure the database
    `php artisan migrate`
 
-8. Generate storage link
-   `php artisan storage:link`
-
-9. Start the development servers
+8. Start the development servers
    `npm run dev` & `php artisan serve`
 
-10. Visit the application at [http://localhost:8000](http://localhost:8000)
+9. Visit the application at [http://localhost:8000](http://localhost:8000)
 
 ## Features
 
