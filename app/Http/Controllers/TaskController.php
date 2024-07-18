@@ -50,7 +50,16 @@ class TaskController extends Controller
     {
         $validatedData = $request->validated();
 
-        Task::create($validatedData);
+        try {
+            Task::creates($validatedData);
+        } catch (\Exception $e) {
+            return redirect()
+                ->back()
+                ->with([
+                    'error'=>'Failed to create task.'
+                ]);
+        }
+
 
         return redirect()->route('tasks.index')->with('success', 'Task has been created!');
     }
@@ -85,7 +94,15 @@ class TaskController extends Controller
         $minDate = date('Y-m-d H:i:s', strtotime($params['updated_at']));
         unset($params['updated_at']);
 
-        $result = Task::where('id', $id)->where('updated_at','<=',$minDate)->update($params);
+        try {
+            $result = Task::where('id', $id)->where('updated_at','<=',$minDate)->update($params);
+        } catch (\Exception $e) {
+            return redirect()
+                ->back()
+                ->with([
+                    'error'=>'Failed to update task.'
+                ]);
+        }
 
         if($result)
             return redirect('/tasks')->with('success', 'Task has been updated!');
@@ -102,7 +119,15 @@ class TaskController extends Controller
      */
     public function destroy(string $id)
     {
-        Task::destroy($id);
+        try {
+            Task::destroy($id);
+        } catch (\Exception $e) {
+            return redirect()
+                ->back()
+                ->with([
+                    'error'=>'Failed to delete task.'
+                ]);
+        }
 
         return back()->with('success', 'Task has been deleted!');
     }
