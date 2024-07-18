@@ -51,7 +51,7 @@ class TaskController extends Controller
         $validatedData = $request->validated();
 
         try {
-            Task::creates($validatedData);
+            Task::create($validatedData);
         } catch (\Exception $e) {
             return redirect()
                 ->back()
